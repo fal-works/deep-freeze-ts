@@ -1,0 +1,33 @@
+{
+  "name": "@fal-works/deep-freeze",
+  "description": "You'll be deeply frozen.",
+  "version": "0.1.0",
+  "license": "CC0-1.0",
+  "author": "FAL",
+  "keywords": [],
+  "files": [
+    "lib",
+    "src"
+  ],
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "type": "module",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.1.3"
+  },
+  "scripts": {
+    "build": "rimraf lib && tsc && npm run format:lib",
+    "preformat:lib": "eslint --fix --no-ignore lib/**/*.js",
+    "format:lib": "prettier --write lib/**/*.{js,ts}",
+    "lint": "eslint src/**/*.ts"
+  }
+}
